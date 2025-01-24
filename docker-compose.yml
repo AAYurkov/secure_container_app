@@ -1,0 +1,38 @@
+version: "3.8"
+
+services:
+  access_control:
+    build: ./access_control
+    ports:
+      - "4000:4000"
+    depends_on:
+      - app_security
+    networks:
+      - secure_network
+
+  app_security:
+    build: ./app_security
+    ports:
+      - "5000:5000"
+    networks:
+      - secure_network
+
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3000:3000"
+    networks:
+      - secure_network
+
+  prometheus:
+    image: prom/prometheus:latest
+    ports:
+      - "9090:9090"
+    networks:
+      - secure_network
+    volumes:
+      - /home/sarventum/secure_container/monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+
+networks:
+  secure_network:
+    driver: bridge
