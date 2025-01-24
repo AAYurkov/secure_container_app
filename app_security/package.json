@@ -1,0 +1,16 @@
+{
+  "name": "app_security",
+  "version": "1.0.0",
+  "description": "App security and validation service",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "sqlite3": "^5.1.0",
+    "body-parser": "^1.19.0"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Your Name",
+  "license": "ISC"
+}

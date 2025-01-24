@@ -1,0 +1,16 @@
+version: '3'
+services:
+  app_security:
+    build: .
+    container_name: app_security
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
+      - ./trusted_apps.db:/app/trusted_apps.db  # Монтирование файла базы данных
+    networks:
+      - secure_network
+
+networks:
+  secure_network:
+    driver: bridge
