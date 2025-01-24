@@ -1,0 +1,11 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'access_control'
+    static_configs:
+      - targets: ['access_control:4000']
+
+  - job_name: 'app_security'
+    static_configs:
+      - targets: ['app_security:5000']
