@@ -1,0 +1,16 @@
+{
+  "name": "access_control",
+  "version": "1.0.0",
+  "description": "Access control for app security",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "express": "^4.17.1",
+    "prom-client": "^14.0.0"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Your Name",
+  "license": "ISC"
+}
